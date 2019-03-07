@@ -22,3 +22,8 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+
+alias gstash='git stash save --include-untracked'
+alias gbdelete='git branch | grep -v "master\|develop" | xargs git branch -D'
+alias gbdrk='git branch | grep "rk\/" | xargs git branch -D'
+alias gbdcars='git branch | grep "CARS-" | xargs git branch -D'
