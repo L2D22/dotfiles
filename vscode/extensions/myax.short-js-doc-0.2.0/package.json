@@ -1,0 +1,58 @@
+{
+	"name": "short-js-doc",
+	"version": "0.2.0",
+	"publisher": "myax",
+	"displayName": "Short JS Doc",
+	"description": "Short Javascript Snippets and Documentation based on JSDuck.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS.",
+	"author": "Miguel Yax <mig_dj@hotmail.com>",
+	"icon": "images/icon.png",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "javascript",
+				"aliases": [
+					"JavaScript"
+				],
+				"extensions": [
+					".js",
+					".vue"
+				]
+			},
+			{
+				"id": "typescript",
+				"aliases": [
+					"TypeScript"
+				],
+				"extensions": [
+					".ts"
+				]
+			}
+		],
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/short-js-doc.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Krazeus/short-js-doc.git"
+	},
+	"devDependencies": {
+		"express": "^4.15.2"
+	},
+	"dependencies": {},
+	"__metadata": {
+		"id": "d3d8c87e-6b24-4721-9b69-bb7934bbd832",
+		"publisherId": "9c77b7ce-a556-4671-b384-35684302789d",
+		"publisherDisplayName": "Miguel Yax"
+	}
+}

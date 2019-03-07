@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "material-icon-theme"
+}

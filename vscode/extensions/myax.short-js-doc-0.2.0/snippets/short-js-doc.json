@@ -1,0 +1,325 @@
+{
+	"at": {
+		"prefix": "at",
+		"body": [
+			"/*!",
+			" * @author ${1:user} <${2:email}>",
+			" * date ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+			" * ${3:description} $0",
+			" */"
+		],
+		"description": "Author information"
+	},
+	"jc": {
+		"prefix": "jc",
+		"body": [
+			"/*",
+			" * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification} $0",
+			" */"
+		],
+		"description": "Justification change"
+	},
+	"ed": {
+		"prefix": "ed",
+		"body": [
+			"/**",
+			" * @class ${1:name}",
+			" * @extends ${2:extend}",
+			" * @xtype ${4:xtype}",
+			" * ${5:description}",
+			" */",
+			"Ext.define('${1:name}', {",
+			"  extend: '${2:extend}',",
+			"  xtype: '${4:xtype}',",
+			"  ${6://}requires: [${7}],",
+			"  initComponent: function (){",
+			"    var ${8:me} = this;",
+			"",
+			"    Ext.apply(${8:me}, {",
+			"      items: [",
+			"       {",
+			"        $0",
+			"       }",
+			"      ]",
+			"    });",
+			"",
+			"    ${8:me}.callParent(arguments);",
+			"  }",
+			"});"
+		],
+		"description": "Ext JS Class definition"
+	},
+	"pt": {
+		"prefix": "pt",
+		"body": [
+			"@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}"
+		],
+		"description": "Property tag"
+	},
+	"pd": {
+		"prefix": "pd",
+		"body": [
+			"/*",
+			" * @${1|cfg,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}",
+			" */",
+			"${4:name}${7|:,=|} ${5:null}${8:,}"
+		],
+		"description": "Property definition"
+	},
+	"pp": {
+		"prefix": "pp",
+		"body": [
+			"${1:property}${2|:,=|} ${3:null}${4:,}"
+		],
+		"description": "Property"
+	},
+	"ep": {
+		"prefix": "ep",
+		"body": [
+			"${1:property}${2|:,=|} ${3}${4:property} ${5:,}"
+		],
+		"description": "Equal name property and value"
+	},
+	"sp": {
+		"prefix": "sp",
+		"body": [
+			"${1:property}${2|:,=|} '${3:value}'${4:,}"
+		],
+		"description": "String property"
+	},
+	"gp": {
+		"prefix": "gp",
+		"body": [
+			"${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
+		],
+		"description": "Get property"
+	},
+	"bp": {
+		"prefix": "bp",
+		"body": [
+			"${1:property}: '{${2:value}}'${3:,}"
+		],
+		"description": "Bind property"
+	},
+	"bc": {
+		"prefix": "bc",
+		"body": [
+			"${1:bind}: {",
+			"  ${2:property}: '{${3:value}}',$0",
+			"},"
+		],
+		"description": "Bind configuration"
+	},
+	"ap": {
+		"prefix": "ap",
+		"body": [
+			"${1:name}${2|:,=|} [${3}]${4:,}"
+		],
+		"description": "Array property"
+	},
+	"op": {
+		"prefix": "op",
+		"body": [
+			"${1:name}${2::} {",
+			"  ${4:property}: ${5:''}, $0",
+			"},"
+		],
+		"description": "Object property"
+	},
+	"ct": {
+		"prefix": "ct",
+		"body": [
+			"@${1|private,protected,public|} ${2:args}"
+		],
+		"description": "Context tag"
+	},
+	"cd": {
+		"prefix": "cd",
+		"body": [
+			"//<debug>",
+			"${1}",
+			"console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0",
+			"//</debug>"
+		],
+		"description": "Console debug block"
+	},
+	"cm": {
+		"prefix": "cm",
+		"body": [
+			"//<debug>",
+			"${1}",
+			"  console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0",
+			"//</debug>"
+		],
+		"description": "Console methods"
+	},
+	"cc": {
+		"prefix": "cc",
+		"body": [
+			"/**",
+			" * $0",
+			" */"
+		],
+		"description": "Comment code"
+	},
+	"uf": {
+		"prefix": "uf",
+		"body": [
+			" /**",
+			"  * @${1|private,protected,public|}",
+			"  */",
+			"update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {",
+			"  $0",
+			"},"
+		],
+		"description": "Update function property"
+	},
+	"sg": {
+		"prefix": "sg",
+		"body": [
+			"/**",
+			" * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} ",
+			" * @${5|public,private,protected|}",
+			" */",
+			"set${6:Property}${7|:,=|} function (${2:name}) {",
+			"  var old${2:name} = this.${2:name};",
+			"  if (${2:name} !== old${2:name}) {",
+			"    ${8}",
+			"    this.${2:name} = ${2:name};",
+			"    //this.update${6:Property}(${2:name}, old${2:name});",
+			"  }",
+			"},",
+			"/**",
+			" * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} ",
+			" * @${5|public,private,protected|}",
+			" */",
+			"get${6:Property}${7|:,=|} function () {",
+			"  var ${2:name} = this.${2:name} || ${3:default};",
+			"  ${9}",
+			"  return ${2:name};",
+			"},"
+		],
+		"description": "Set and get property"
+	},
+	"cv": {
+		"prefix": "cv",
+		"body": [
+			"var ${1:me} = this,",
+			"  ${2:view} = ${1:me}.getView(),",
+			"  ${3:model} = ${1:me}.getViewModel(),",
+			"  ${4:refs} = ${1:me}.getReferences();",
+			"  $0"
+		],
+		"description": "Control variables"
+	},
+	"xl": {
+		"prefix": "xl",
+		"body": [
+			"${Ext}.log({",
+			"  msg: '${1:debug}',",
+			"  level: '${2|log,info,error,warn|}',",
+			"  dump: ${3:arguments},",
+			"  stack: ${4|true,false|}",
+			"});"
+		],
+		"description": "Ext log"
+	},
+	"fp": {
+		"prefix": "fp",
+		"body": [
+			"/**",
+			" * ${1:name} ${2:description}",
+			" * @${3|private,protected,public|}",
+			" */",
+			"${1:name}${4|:,=|} function (${5}) {",
+			"  $0",
+			"},"
+		],
+		"description": "Function property"
+	},
+	"mp": {
+		"prefix": "mp",
+		"body": [
+			"/**",
+			" * @${1|method,function|} ${2:name} ${3:description}",
+			" * @returns {${4|String,Number,Boolean,Object,Array,Function,Date|}} ${5:property} `${6:default}` ${7:description}",
+			" * @${8|private,protected,public|}",
+			" */",
+			"${2:name} ${9|:,=|} function (${10}) {",
+			"  var ${5:property} = ${6:null};",
+			"  $0",
+			"  return ${5:property};",
+			"},"
+		],
+		"description": "Method property"
+	},
+	"ew": {
+		"prefix": "ew",
+		"body": [
+			"Ext.${1|widget,create|}('${xtype}',{",
+			"  $0",
+			"});"
+		],
+		"description": "Ext widget"
+	},
+	"cf": {
+		"prefix": "cf",
+		"body": [
+			"${1:function}($0);"
+		],
+		"description": "Call function"
+	},
+	"aop": {
+		"prefix": "aop",
+		"body": [
+			"${1:object}[${2:'${3:property}'}];"
+		],
+		"description": "Access object property"
+	},
+	"td": {
+		"prefix": "td",
+		"body": [
+			"/**",
+			" * @todo ${1:description} $0",
+			" */"
+		],
+		"description": "Todo Tag"
+	},
+	"gt": {
+		"prefix": "gt",
+		"body": [
+			"/**",
+			" * @${1:tag} $0 ",
+			" */"
+		],
+		"description": "Generic Tag"
+	},
+	"vt": {
+		"prefix": "vt",
+		"body": [
+			"/**",
+			" * @version ${1:major}.${2:minor}.${3:patch} $0",
+			" */"
+		],
+		"description": "Version Tag"
+	},
+	"dt": {
+		"prefix": "dt",
+		"body": [
+			"/**",
+			" * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 ",
+			" */"
+		],
+		"description": "Deprecated Tag"
+	},
+	"crt": {
+		"prefix": "crt",
+		"body": [
+			"/**",
+			" * @copyright  ${1:name} ${2:year} ",
+			" * $0 ",
+			" */"
+		],
+		"description": "Copyright Tag"
+	}
+}

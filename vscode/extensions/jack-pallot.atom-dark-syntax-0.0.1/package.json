@@ -1,0 +1,32 @@
+{
+	"name": "atom-dark-syntax",
+	"displayName": "Atom Dark Syntax",
+	"description": "The default Atom Dark Syntax theme ported to VS Code",
+	"version": "0.0.1",
+	"publisher": "jack-pallot",
+	"engines": {
+		"vscode": "^1.14.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jack-pallot/vscode-atom-dark-syntax.git"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Atom Dark Syntax",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Atom Dark Syntax-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "06f11598-106f-4b03-91f9-34595081d502",
+		"publisherId": "fd59a57c-002a-44d3-8e4e-49cca7534a20",
+		"publisherDisplayName": "Jack Pallot"
+	}
+}
